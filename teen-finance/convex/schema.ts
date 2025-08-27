@@ -18,9 +18,17 @@ export default defineSchema({
 
   // --- Lessons ---
   lessons: defineTable({
-    name: v.string(),
-    pages: v.number(),
-    awardId: v.optional(v.id("awards")),
+    title: v.string(),
+    slides: v.array(v.string()),
+    quiz: v.array(
+      v.object({
+        question: v.string(),
+        options: v.array(v.string()),
+        correctIndex: v.number(),
+      })
+    ),
+    rewardCoins: v.number(),
+    icon: v.optional(v.string()),
   }),
 
   // --- Awards ---

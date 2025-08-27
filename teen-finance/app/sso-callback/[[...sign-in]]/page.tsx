@@ -9,7 +9,7 @@ export default function SSOCallback() {
   const router = useRouter();
 
   useEffect(() => {
-    if (isSignedIn) router.replace('/');
+    if (isSignedIn) router.replace('/lessons');
   }, [isSignedIn, router]);
 
   return (
